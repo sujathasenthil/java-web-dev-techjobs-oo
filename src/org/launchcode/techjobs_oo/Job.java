@@ -1,5 +1,6 @@
 package org.launchcode.techjobs_oo;
 
+import javax.xml.crypto.Data;
 import java.util.Objects;
 
 public class Job {
@@ -58,8 +59,8 @@ public class Job {
     }
 
     public String getName() {
-        return name;
-    }
+              return name;
+       }
 
     public void setName(String name) {
         this.name = name;
@@ -99,6 +100,20 @@ public class Job {
 
     @Override
     public String toString() {
+        if (this.getName().equals(""))
+            this.setName("Data not Available");
+        if (this.employer.getValue().equals(""))
+            this.employer.setValue("Data not Available");
+        if (this.location.getValue().equals(""))
+            this.location.setValue("Data not Available");
+        if (this.positionType.getValue().equals(""))
+            this.positionType.setValue("Data not Available");
+        if (this.coreCompetency.getValue().equals(""))
+            this.coreCompetency.setValue("Data not Available");
+        if(this.getName().equals("") &&(this.employer.getValue().equals(""))&&(this.location.getValue().equals(""))&&(this.positionType.getValue().equals(""))&&(this.coreCompetency.getValue().equals("")))
+            return "OOPS! This job does not seem to exist";
+        else
+        {
         return "\n" +
                 "Id: " + id +"\n"+
                 "Name: '" + name + '\'' +"\n"+
@@ -107,5 +122,6 @@ public class Job {
                 "Position Type: " + positionType +"\n"+
                 "Core Competency: " + coreCompetency +
                 "\n" ;
-    }
+        }
+}
 }
