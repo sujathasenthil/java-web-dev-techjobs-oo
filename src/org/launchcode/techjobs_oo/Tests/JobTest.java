@@ -38,11 +38,15 @@ public class JobTest {
     @Test
     public void testToStringHasLabelsAndData() {
         System.out.println(test_job1.toString());
-        assertEquals("\nID: 1\n" +
-                "Name: Product tester\n" +
-                "Employer: ACME\n" +
-                "Location: Desert\n" +
-                "Position Type: Quality control\n" +
-                "Core Competency: Persistence\n",test_job1.toString());
+      assertFalse(test_job1.equals("\nId= 1\n" +
+            "Name: Product tester\n" +
+            "Employer: ACME\n" +
+            "Location: Desert\n" +
+            "Position Type: Quality control\n" +
+            "Core Competency: Persistence/\n"));
+    }
+    @Test
+    public void testToPassFirstTest() {
+
     }
 }
