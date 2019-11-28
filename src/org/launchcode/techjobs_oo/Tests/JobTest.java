@@ -42,7 +42,7 @@ public class JobTest {
     }
 
     @Test
-    public void testToFormatLabelsAndData() {
+    public void testForToString() {
         assertFalse(test_job1.equals("\nId= 1\n" +
                 "Name: "+test_job1.getName()+"\n" +
                 "Employer: "+test_job1.getEmployer()+"\n" +
