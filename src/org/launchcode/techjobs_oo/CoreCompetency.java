@@ -13,6 +13,5 @@ public class CoreCompetency extends JobField {
         CoreCompetency that = (CoreCompetency) o;
         return id == that.id;
     }
-
 }
 

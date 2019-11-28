@@ -13,5 +13,4 @@ public class Employer extends JobField {
         Employer employer = (Employer) o;
         return getId() == employer.getId();
     }
-
 }

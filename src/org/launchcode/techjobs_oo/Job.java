@@ -24,11 +24,11 @@ public class Job {
 
     public Job(String name, Employer aEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetency) {
         this();
-        this.name=name;
+        this.name = name;
         this.employer = aEmployer;
-        this.location=aLocation;
-        this.positionType=aPositionType;
-        this.coreCompetency=aCoreCompetency;
+        this.location = aLocation;
+        this.positionType = aPositionType;
+        this.coreCompetency = aCoreCompetency;
     }
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
@@ -59,8 +59,8 @@ public class Job {
     }
 
     public String getName() {
-              return name;
-       }
+        return name;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -100,30 +100,27 @@ public class Job {
 
     @Override
     public String toString() {
-  //      if((this.getName()=="") &&(this.getEmployer() == null)&&(this.getLocation()==null)&&(this.getPositionType()==null)&&(this.getCoreCompetency()==null))
-        if((this.getName()=="") &&(this.employer.getValue() == null)&&(this.location.getValue()==null)&&(this.positionType.getValue()==null)&&(this.coreCompetency.getValue()==null)) {
-            return "OOPS! This job does not seem to exist";
+       if(this.name == null && this.employer == null && this.location == null && this.positionType == null && this.coreCompetency == null)
+           return "OOPS! This job does not seem to exist";
+
+            if (this.getName().equals(""))
+                this.setName("Data not Available");
+            if (this.employer.getValue().equals(""))
+                this.employer.setValue("Data not Available");
+            if (this.location.getValue().equals(""))
+                this.location.setValue("Data not Available");
+            if (this.positionType.getValue().equals(""))
+                this.positionType.setValue("Data not Available");
+            if (this.coreCompetency.getValue().equals(""))
+                this.coreCompetency.setValue("Data not Available");
+
+            return "\n" +
+                    "Id: " + id + "\n" +
+                    "Name: '" + name + '\'' + "\n" +
+                    "Employer: " + employer + "\n" +
+                    "Location: " + location + "\n" +
+                    "Position Type: " + positionType + "\n" +
+                    "Core Competency: " + coreCompetency +
+                    "\n";
         }
-        if (this.getName().equals(""))
-            this.setName("Data not Available");
-        if (this.employer.getValue().equals(""))
-            this.employer.setValue("Data not Available");
-        if (this.location.getValue().equals(""))
-            this.location.setValue("Data not Available");
-        if (this.positionType.getValue().equals(""))
-            this.positionType.setValue("Data not Available");
-        if (this.coreCompetency.getValue().equals(""))
-            this.coreCompetency.setValue("Data not Available");
-
-
-        return "\n" +
-                "Id: " + id +"\n"+
-                "Name: '" + name + '\'' +"\n"+
-                "Employer: " + employer +"\n"+
-                "Location: " + location +"\n"+
-                "Position Type: " + positionType +"\n"+
-                "Core Competency: " + coreCompetency +
-                "\n" ;
-
-}
-}
+    }
